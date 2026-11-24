@@ -13,15 +13,15 @@ Aqui só há configuração do cliente, sem segredo: o servidor MCP roda em `htt
 
 Sem git, pelo site: `/plugin marketplace add https://eapbuild.com.br/claude/marketplace.json`.
 
-A instalação pede o **token de API**: crie em [Minha conta › Integrações com IA](https://eapbuild.com.br/user/integrations?ferramenta=claude-code&nome=Claude%20Code). Para trocar depois: `/plugin configure eapbuild@mcp`. Versões novas: `/plugin marketplace update mcp`.
+No primeiro uso, rode `/mcp` → eapbuild → **Autenticar**: o navegador abre, você entra no eapbuild e clica em **Autorizar**. Não precisa copiar token. Versões novas: `/plugin marketplace update mcp`.
 
-**Sem token (login no navegador):**
+**Sem o plugin**, só o servidor MCP (mesmo login no navegador):
 
 ```
 claude mcp add --transport http eapbuild https://eapbuild.com.br/api/v1/mcp
 ```
 
-Depois `/mcp` → eapbuild → Autenticar, entre no eapbuild e clique em **Autorizar**.
+**Prefere token?** Crie em [Minha conta › Integrações com IA](https://eapbuild.com.br/user/integrations?ferramenta=claude-code&nome=Claude%20Code) e conecte com `claude mcp add --transport http eapbuild https://eapbuild.com.br/api/v1/mcp --header "Authorization: Bearer eapb_..."`.
 
 ## Outras ferramentas
 
@@ -45,13 +45,13 @@ A skill em `skills/eapbuild/SKILL.md` ensina o assistente a ler antes de alterar
 
 ## Segurança
 
-- O token (ou o login no navegador) age como você: o assistente só vê os seus projetos.
-- O token fica no cofre de senhas do sistema (`userConfig` sensível), nunca em arquivo deste repositório.
+- O login no navegador (ou o token) age como você: o assistente só vê os seus projetos.
+- Nenhum segredo fica neste repositório: o acesso é emitido pelo eapbuild no login e guardado pelo Claude Code.
 - Desconecte quando quiser em Minha conta › Integrações com IA.
 
 ## English
 
-Claude Code plugin and MCP configuration for [eapbuild](https://eapbuild.com.br), a Brazilian construction budgeting app (EAP/WBS from project drawings). Install with `/plugin marketplace add eapbuild/mcp` and `/plugin install eapbuild@mcp`; it asks for an eapbuild API token, or connect the MCP server `https://eapbuild.com.br/api/v1/mcp` with OAuth login instead. The server acts as the signed-in user with the app's own permissions.
+Claude Code plugin and MCP configuration for [eapbuild](https://eapbuild.com.br), a Brazilian construction budgeting app (EAP/WBS from project drawings). Install with `/plugin marketplace add eapbuild/mcp` and `/plugin install eapbuild@mcp`; on first use, run `/mcp` → eapbuild → Authenticate to sign in with OAuth in the browser (no token to paste). A personal API token still works with `claude mcp add --header`. The server acts as the signed-in user with the app's own permissions.
 
 ## Licença
 

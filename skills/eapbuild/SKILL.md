@@ -30,10 +30,10 @@ O eapbuild monta o orçamento de uma obra (a EAP) a partir das pranchas que o us
 4. **Pendências: só com informação do usuário.** Em `responder_pendencia`, escreva o que o usuário disse (ex.: "a altura do muro é 2,10 m"). Não chute medidas. Se não souber, pergunte ao usuário.
 5. **Projeto aguardando pagamento.** Se `ver_projeto` mostrar `ia_bloqueada: true`, `editar_eap_com_ia` não funciona até o usuário liberar o projeto no app. Explique isso em vez de tentar de novo.
 6. **Erros.** As mensagens de erro já vêm em português e dizem o que fazer (ex.: "aguarde alguns segundos" entre mensagens para a IA). Siga a orientação; não repita a mesma chamada em sequência.
-7. **Sem conexão ou sem token.** Se as ferramentas `eapbuild` não aparecerem, ou falharem por login/token (401, "não autorizado", servidor desconectado no `/mcp`), não tente de novo. Diga ao usuário, com o link:
-   1. Abra https://eapbuild.com.br/user/integrations?ferramenta=claude-code&nome=Claude%20Code (entre na conta se pedir).
-   2. Clique em **Criar token** e copie o token (começa com `eapb_` e aparece uma vez só).
-   3. Rode `/plugin configure eapbuild@mcp`, cole o token e depois `/reload-plugins` (ou reinicie o Claude Code).
+7. **Sem conexão ou sem login.** Se as ferramentas `eapbuild` não aparecerem, ou falharem por login (401, "não autorizado", servidor desconectado no `/mcp`), não tente de novo. Diga ao usuário:
+   1. Rode `/mcp`, escolha **eapbuild** e clique em **Autenticar**.
+   2. No navegador, entre no eapbuild (se pedir) e clique em **Autorizar**.
+   3. Volte ao Claude Code: as ferramentas aparecem sozinhas.
 
 ## Fluxo típico
 
