@@ -1,0 +1,35 @@
+{
+  "name": "eapbuild",
+  "version": "1.2.1",
+  "description": "Use o eapbuild no Claude Code: liste e veja projetos, a EAP e as pendências, edite a EAP com a IA (com confirmação) e gere o link do cliente com PDF e planilha.",
+  "author": {
+    "name": "eapbuild"
+  },
+  "homepage": "https://eapbuild.com.br",
+  "repository": "https://github.com/eapbuild/mcp",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://eapbuild.com.br/legal/privacy",
+  "icon": "assets/icon.png",
+  "keywords": [
+    "eapbuild",
+    "orçamento",
+    "eap",
+    "construção",
+    "mcp"
+  ],
+  "userConfig": {
+    "api_token": {
+      "type": "string",
+      "title": "Token de API do eapbuild",
+      "description": "Abra https://eapbuild.com.br/user/integrations?ferramenta=claude-code&nome=Claude%20Code, clique em Criar token e cole aqui. Começa com eapb_.",
+      "sensitive": true,
+      "required": true
+    },
+    "server_url": {
+      "type": "string",
+      "title": "Endereço do servidor MCP",
+      "description": "Deixe o padrão, a menos que use outra instalação do eapbuild.",
+      "default": "https://eapbuild.com.br/api/v1/mcp"
+    }
+  }
+}

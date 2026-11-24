@@ -1,0 +1,14 @@
+{
+  "name": "mcp",
+  "description": "Plugins do eapbuild (orçamento de obra com IA) para o Claude Code.",
+  "owner": {
+    "name": "eapbuild"
+  },
+  "plugins": [
+    {
+      "name": "eapbuild",
+      "source": ".",
+      "description": "eapbuild no Claude Code: projetos, EAP, pendências, edição com IA e link do cliente."
+    }
+  ]
+}
